@@ -16,40 +16,15 @@ while True:
 
     if not battery_status["isCharging"]:
 
-        if battery_status["percentage"] == 2:
-            notify_alert(2)
+        if battery_status["percentage"] <= 20:
+            notify_alert(battery_status["percentage"])
 
-        elif battery_status["percentage"] == 5:
-            notify_alert(2)
-
-        elif battery_status["percentage"] == 10:
-            notify_alert(10)
-
-        elif battery_status["percentage"] == 15:
-            notify_alert(15)
-
-        elif battery_status["percentage"] == 20:
-            notify_alert(20)
-
-        elif battery_status["percentage"] == 25:
-            notify_alert(25)
-
-        elif battery_status["percentage"] == 30:
-            notify_alert(30)
-
-        elif battery_status["percentage"] == 35:
-            notify_alert(35)
-
-        elif battery_status["percentage"] == 40:
-            notify_alert(40)
-
-        elif battery_status["percentage"] == 45:
-            notify_alert(45)
-
-        elif battery_status["percentage"] == 50:
-            notify_alert(50)
-
-        sleep(20)
+        elif battery_status["percentage"] <= 50:
+            notify_alert(battery_status["percentage"])
+            sleep(300)
+            continue
+        
+        sleep(120)
 
     
     
